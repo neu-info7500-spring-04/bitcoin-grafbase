@@ -13,7 +13,7 @@ npx grafbase dev
 
 The gateway should be at http://127.0.0.1:4000/graphql.
 
-Use Postman to try the following query on the gateway.
+Use [Postman](https://www.postman.com/) to try the following query on the gateway.
 This query invokes the bitquery subgraph. 
 ```graphql
 query {
