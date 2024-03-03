@@ -1,0 +1,4 @@
+.env
+.grafbase
+node_modules
+.idea
