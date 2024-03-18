@@ -8,6 +8,13 @@ dotenv.config();
 
 const g = graph.Standalone();
 
+const mempool = connector.OpenAPI('mempool', {
+  schema: 'https://raw.githubusercontent.com/akumalla-s/mempoolspecification/main/openAPI.yaml',
+  url: "https://mempool.space/api/v1",
+});
+
+g.datasource(mempool);
+
 const contentful = connector.GraphQL('bitquery', {
   url: "https://graphql.bitquery.io",
   headers: headers => {
