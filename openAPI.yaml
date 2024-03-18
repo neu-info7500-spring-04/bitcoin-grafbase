@@ -12,17 +12,17 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/MiningPoolResponse'
+                $ref: '#/components/schemas/miningpool'
 
 components:
   schemas:
-    MiningPoolResponse:
+    miningpool:
       type: object
       properties:
         pools:
           type: array
           items:
-            $ref: '#/components/schemas/MiningPool'
+            $ref: '#/components/schemas/pool'
         blockCount:
           type: integer
           description: Total number of blocks mined in the last 24 hours
@@ -30,7 +30,7 @@ components:
           type: number
           description: Last estimated hashrate
           
-    MiningPool:
+    pool:
       type: object
       properties:
         poolId:
