@@ -52,7 +52,6 @@ const blockchairapi = connector.OpenAPI('blockchairapi', {
   // },
 })
 
-g.datasource(coinapi)
 g.datasource(blockchairapi)
 
 export default config({
