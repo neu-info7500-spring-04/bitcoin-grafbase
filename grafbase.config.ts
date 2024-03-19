@@ -9,7 +9,7 @@ dotenv.config();
 const g = graph.Standalone();
 
 const mempool = connector.OpenAPI('mempool', {
-  schema: 'https://raw.githubusercontent.com/akumalla-s/mempoolspecification/main/openAPI.yaml',
+  schema: 'https://raw.githubusercontent.com/neu-info7500-spring-04/bitcoin-explorer/Danielnewheart_OpenAPI/openAPI.yaml',
   url: "https://mempool.space/api/v1",
 });
 
