@@ -54,6 +54,11 @@ const blockchairapi = connector.OpenAPI('blockchairapi', {
 
 g.datasource(blockchairapi)
 
+const blockChainApi = connector.OpenAPI('blockchainapi',{
+  schema: 'https://raw.githubusercontent.com/neu-info7500-spring-04/neu-info7500-spring-04-BlockChain-API-Schema/main/blockChainSchema.yaml'
+});
+g.datasource(blockChainApi)
+
 export default config({
   graph: g,
   // Authentication - https://grafbase.com/docs/auth
