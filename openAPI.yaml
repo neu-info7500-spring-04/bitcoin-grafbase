@@ -7,12 +7,27 @@ paths:
     get:
       summary: Get mining pool statistics for the last 24 hours
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/miningpool'
+                $ref: "#/components/schemas/miningpool"
+
+  /lightning/nodes/countries:
+    get:
+      summary: Returns aggregate capacity and number of clearnet nodes per country.
+      description: Capacity figures are in satoshis.
+      operationId: getLightningNodesCountries
+      responses:
+        "200":
+          description: An array of countries with their Lightning Network nodes statistics.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/countryNodeStats"
 
 components:
   schemas:
@@ -22,14 +37,14 @@ components:
         pools:
           type: array
           items:
-            $ref: '#/components/schemas/pool'
+            $ref: "#/components/schemas/pool"
         blockCount:
           type: integer
           description: Total number of blocks mined in the last 24 hours
         lastEstimatedHashrate:
           type: number
           description: Last estimated hashrate
-          
+
     pool:
       type: object
       properties:
@@ -64,3 +79,27 @@ components:
         poolUniqueId:
           type: integer
           description: The unique ID of the pool
+
+    countryNodeStats:
+      type: object
+      properties:
+        name:
+          type: object
+          properties:
+            de: { type: string }
+            en: { type: string }
+            es: { type: string }
+            fr: { type: string }
+            ja: { type: string }
+            pt-BR: { type: string }
+            ru: { type: string }
+            zh-CN: { type: string }
+        iso:
+          type: string
+        count:
+          type: integer
+        share:
+          type: number
+          format: float
+        capacity:
+          type: string
