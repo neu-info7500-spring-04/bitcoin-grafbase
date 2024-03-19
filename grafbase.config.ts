@@ -44,6 +44,17 @@ const bitnode = connector.OpenAPI("bitnodes", {
 
 g.datasource(bitnode);
 
+
+const blockchairapi = connector.OpenAPI('blockchairapi', {
+  schema: 'https://raw.githubusercontent.com/neu-info7500-spring-04/Blockchair-API-Schema/main/Blockchair.openapi.yaml',
+  // headers: headers => {
+  //   headers.set('X-CoinAPI-Key', g.env("COINAPI_API_KEY"))
+  // },
+})
+
+g.datasource(coinapi)
+g.datasource(blockchairapi)
+
 export default config({
   graph: g,
   // Authentication - https://grafbase.com/docs/auth
