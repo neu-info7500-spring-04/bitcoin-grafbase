@@ -16,6 +16,16 @@ const mempool = connector.OpenAPI("mempool", {
 
 g.datasource(mempool);
 
+
+//Don't chnage this schema. It is specifically for utxo
+const mempoolutxo = connector.OpenAPI("mempoolutxo", {
+  schema:
+    "https://raw.githubusercontent.com/Shaiz-Akhtar/graphbaseyaml/main/test.yaml",
+  url: "https://mempool.space/api/",
+});
+
+g.datasource(mempoolutxo);
+
 const contentful = connector.GraphQL("bitquery", {
   url: "https://graphql.bitquery.io",
   headers: (headers) => {
