@@ -28,6 +28,18 @@ paths:
                 type: array
                 items:
                   $ref: "#/components/schemas/countryNodeStats"
+  
+  /lightning/nodes/isp-ranking:
+    get:
+      summary: Returns aggregate capacity, number of nodes, and number of channels per ISP. Capacity figures are in satoshis.
+      description: Capacity figures are in satoshis
+      responses:
+        "200":
+          description: A list of arrays of ispRanking nodes info and three capacity statistics
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ispRankingStats"
 
 components:
   schemas:
@@ -103,3 +115,21 @@ components:
           format: float
         capacity:
           type: string
+          
+    ispRankingStats:
+      type: object
+      properties:
+        clearnetCapacity:
+          type: integer
+        torCapacity:
+          type: integer
+        unknownCapacity:
+          type: integer
+        ispRanking:
+          type: array
+          items:
+            type: array
+            items:
+              anyOf:
+                - type: string
+                - type: integer
