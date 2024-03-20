@@ -69,15 +69,15 @@ const blockChainApi = connector.OpenAPI('blockchainapi',{
 });
 g.datasource(blockChainApi)
 
-// const cryptoapis = connector.OpenAPI('cryptoapis', {
-//   schema: 'https://raw.githubusercontent.com/Romil-Tiwari1/Config-Spec-Yaml/main/cryptoapis_spec.yaml', // You need to provide an OpenAPI spec for your CryptoAPIs endpoint.
-//   url: "https://rest.cryptoapis.io/v2",
-//   headers: headers => {
-//     headers.set('X-API-Key', g.env("CRYPTOAPIS_API_KEY")) // Make sure to replace with your actual API key name
-//   },
-// })
+const cryptoapis = connector.OpenAPI('cryptoapis', {
+  schema: 'https://raw.githubusercontent.com/Romil-Tiwari1/Config-Spec-Yaml/main/cryptoapis_spec.yaml', // You need to provide an OpenAPI spec for your CryptoAPIs endpoint.
+  url: "https://rest.cryptoapis.io/v2",
+  headers: headers => {
+    headers.set('X-API-Key', g.env("CRYPTOAPIS_API_KEY")) // Make sure to replace with your actual API key name
+  },
+})
 
-//g.datasource(cryptoapis)
+g.datasource(cryptoapis)
 
 export default config({
   graph: g,
