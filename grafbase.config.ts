@@ -79,6 +79,15 @@ const cryptoapis = connector.OpenAPI('cryptoapis', {
 
 g.datasource(cryptoapis)
 
+
+const blockstream = connector.OpenAPI('blockstream', {
+  schema: 'https://raw.githubusercontent.com/dheeru99/liquid_transactions/main/transactions/liquid_transactions_grafbase/openAPI.yaml',
+  url: "https://blockstream.info/liquid/api/",
+});
+
+g.datasource(blockstream);
+
+
 export default config({
   graph: g,
   // Authentication - https://grafbase.com/docs/auth
