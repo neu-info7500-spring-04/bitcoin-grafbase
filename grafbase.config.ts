@@ -20,7 +20,7 @@ g.datasource(mempool);
 //Don't chnage this schema. It is specifically for utxo
 const mempoolutxo = connector.OpenAPI("mempoolutxo", {
   schema:
-    "https://raw.githubusercontent.com/Shaiz-Akhtar/graphbaseyaml/main/test.yaml",
+    "https://raw.githubusercontent.com/neu-info7500-spring-04/MempoolTransactionAddressGraphbase/main/TransactionAddress.yaml",
   url: "https://mempool.space/api/",
 });
 
