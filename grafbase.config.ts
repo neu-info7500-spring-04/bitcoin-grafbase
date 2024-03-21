@@ -55,6 +55,13 @@ const bitnode = connector.OpenAPI("bitnodes", {
 g.datasource(bitnode);
 
 
+const blockstream = connector.OpenAPI('blockstream', {
+  schema: 'https://raw.githubusercontent.com/kirubagarthiagarajan/blockstreamSchema/main/blockstreamSchema.yaml',
+  url: 'https://blockstream.info/api',
+});
+
+g.datasource(blockstream);
+
 const blockchairapi = connector.OpenAPI('blockchairapi', {
   schema: 'https://raw.githubusercontent.com/neu-info7500-spring-04/Blockchair-API-Schema/main/Blockchair.openapi.yaml',
   // headers: headers => {
