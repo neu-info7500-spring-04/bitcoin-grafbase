@@ -87,7 +87,7 @@ const blockstream = connector.OpenAPI('blockstream', {
 
 g.datasource(blockstream);
 
-const g = graph.Standalone();
+
 const liquidAsset = connector.OpenAPI('asset', {
   schema: 'https://raw.githubusercontent.com/5060Rekha/Assets/main/liquid_assets_grafbase/openAPI.yaml',
   url: "https://blockstream.info/liquid/api/",
