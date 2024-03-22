@@ -146,7 +146,6 @@ components:
             items:
               anyOf:
                 - type: string
-                - type: integer
 
     # Author: Bote (Porter) Wang; Username: porter-wang
     recentTransaction:
