@@ -3,7 +3,6 @@ import * as dotenv from "dotenv";
 dotenv.config();
 
 // Welcome to Grafbase!
-//
 // Configure authentication, data sources, resolvers and caching for your GraphQL API.
 
 const g = graph.Standalone();
