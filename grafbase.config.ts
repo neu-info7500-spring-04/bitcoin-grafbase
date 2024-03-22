@@ -16,6 +16,14 @@ const mempool = connector.OpenAPI("mempool", {
 
 g.datasource(mempool);
 
+// Author: porter-wang
+const mempoolRecentTransactions = connector.OpenAPI("mempoolRecentTransactions", {
+  schema:
+        "https://raw.githubusercontent.com/neu-info7500-spring-04/bitcoin-grafbase/main/openAPI.yaml",
+  url: "https://mempool.space/api",
+});
+
+g.datasource(mempoolRecentTransactions);
 
 //Don't chnage this schema. It is specifically for utxo
 const mempoolutxo = connector.OpenAPI("mempoolutxo", {
