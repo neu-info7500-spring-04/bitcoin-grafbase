@@ -59,7 +59,6 @@ const blockstreamLatestBlocks = connector.OpenAPI('blockstream', {
   schema: 'https://raw.githubusercontent.com/kirubagarthiagarajan/blockstreamSchema/main/blockstreamSchema.yaml',
   url: 'https://blockstream.info/api',
 });
-
 g.datasource(blockstreamLatestBlocks);
 
 const blockchairapi = connector.OpenAPI('blockchairapi', {
