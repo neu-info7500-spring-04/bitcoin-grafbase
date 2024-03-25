@@ -102,6 +102,17 @@ const mempool1 = connector.OpenAPI('mempool', {
 g.datasource(mempool1);
 
 
+const ethereum = connector.OpenAPI('ethereum', {
+  schema: 'https://raw.githubusercontent.com/RanjithKumar839/demo/main/demo.yaml',
+  url: "https://rest.cryptoapis.io/v2/",
+  headers: headers => {
+    headers.set('X-Api-Key', "")
+  },
+});
+
+g.datasource(ethereum);
+
+
 export default config({
   graph: g,
   // Authentication - https://grafbase.com/docs/auth
