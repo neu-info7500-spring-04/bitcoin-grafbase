@@ -94,6 +94,40 @@ const cryptoapis = connector.OpenAPI('cryptoapis', {
 
 g.datasource(cryptoapis)
 
+
+const blockstream = connector.OpenAPI('blockstream', {
+  schema: 'https://raw.githubusercontent.com/dheeru99/liquid_transactions/main/transactions/liquid_transactions_grafbase/openAPI.yaml',
+  url: "https://blockstream.info/liquid/api/",
+});
+
+g.datasource(blockstream);
+
+
+const liquidAsset = connector.OpenAPI('asset', {
+  schema: 'https://raw.githubusercontent.com/5060Rekha/Assets/main/liquid_assets_grafbase/openAPI.yaml',
+  url: "https://blockstream.info/liquid/api/",
+});
+g.datasource(liquidAsset);
+
+const mempoolConnector = connector.OpenAPI('mempoolBitcoin', {
+  schema: 'https://raw.githubusercontent.com/SidharthReddy11265/sid_bitcoin_graphbase/main/openAPI.yaml',
+  url: "https://mempool.space/api/",
+});
+
+g.datasource(mempoolConnector);
+
+
+const ethereum = connector.OpenAPI('ethereum', {
+  schema: 'https://raw.githubusercontent.com/RanjithKumar839/demo/main/demo.yaml',
+  url: "https://rest.cryptoapis.io/v2/",
+  headers: headers => {
+    headers.set('X-Api-Key', g.env("CRYPTOAPIS_API_KEY"))
+  },
+});
+
+g.datasource(ethereum);
+
+
 export default config({
   graph: g,
   // Authentication - https://grafbase.com/docs/auth
