@@ -94,7 +94,7 @@ const liquidAsset = connector.OpenAPI('asset', {
 });
 g.datasource(liquidAsset);
 
-const mempoolConnector = connector.OpenAPI('mempoolutxo', {
+const mempoolConnector = connector.OpenAPI('mempoolBitcoin', {
   schema: 'https://raw.githubusercontent.com/SidharthReddy11265/sid_bitcoin_graphbase/main/openAPI.yaml',
   url: "https://mempool.space/api/",
 });
