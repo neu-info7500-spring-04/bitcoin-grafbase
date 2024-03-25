@@ -55,11 +55,20 @@ const bitnode = connector.OpenAPI("bitnodes", {
 g.datasource(bitnode);      
 
 
-const blockstreamLatestBlocks = connector.OpenAPI('blockstream', {
+const blockstreamLatestBlocks = connector.OpenAPI('blockstreamLatestBlocks', {
   schema: 'https://raw.githubusercontent.com/kirubagarthiagarajan/blockstreamSchema/main/blockstreamSchema.yaml',
   url: 'https://blockstream.info/api',
 });
+
 g.datasource(blockstreamLatestBlocks);
+
+
+const blockstreamTip = connector.OpenAPI('blockstreamTip', {
+  schema: 'https://raw.githubusercontent.com/kirubagarthiagarajan/blockstreamSchema/main/blockStreamTip.yaml',
+  url: 'https://blockstream.info/api',
+});
+
+g.datasource(blockstreamTip);
 
 const blockchairapi = connector.OpenAPI('blockchairapi', {
   schema: 'https://raw.githubusercontent.com/neu-info7500-spring-04/Blockchair-API-Schema/main/Blockchair.openapi.yaml',
@@ -84,24 +93,6 @@ const cryptoapis = connector.OpenAPI('cryptoapis', {
 })
 
 g.datasource(cryptoapis)
-
-
-const blockstream = connector.OpenAPI('blockstream', {
-  schema: 'https://raw.githubusercontent.com/dheeru99/liquid_transactions/main/transactions/liquid_transactions_grafbase/openAPI.yaml',
-  url: "https://blockstream.info/liquid/api/",
-});
-
-g.datasource(blockstream);
-
-
-const liquidAsset = connector.OpenAPI('asset', {
-  schema: 'https://raw.githubusercontent.com/5060Rekha/Assets/main/liquid_assets_grafbase/openAPI.yaml',
-  url: "https://blockstream.info/liquid/api/",
-});
-g.datasource(liquidAsset);
-
-
-
 
 export default config({
   graph: g,
