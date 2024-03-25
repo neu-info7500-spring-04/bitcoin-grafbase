@@ -101,11 +101,12 @@ const mempoolConnector = connector.OpenAPI('mempoolBitcoin', {
 
 g.datasource(mempoolConnector);
 
+
 const ethereum = connector.OpenAPI('ethereum', {
   schema: 'https://raw.githubusercontent.com/RanjithKumar839/demo/main/demo.yaml',
   url: "https://rest.cryptoapis.io/v2/",
   headers: headers => {
-    headers.set('X-Api-Key', "")
+    headers.set('X-Api-Key', g.env("key"))
   },
 });
 
