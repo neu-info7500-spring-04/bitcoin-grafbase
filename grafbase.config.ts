@@ -112,6 +112,15 @@ const ethereum = connector.OpenAPI('ethereum', {
 
 g.datasource(ethereum);
 
+const bitcoin = connector.OpenAPI('bitcoin', {
+  schema: 'https://raw.githubusercontent.com/neu-info7500-spring-04/bitcoinassetdata/main/demo.yml',
+  url: "https://rest.cryptoapis.io/v2/",
+  headers: headers => {
+    headers.set('X-Api-Key', g.env("CRYPTOAPIS_API_KEY"))
+  },
+});
+
+g.datasource(bitcoin);
 
 export default config({
   graph: g,
