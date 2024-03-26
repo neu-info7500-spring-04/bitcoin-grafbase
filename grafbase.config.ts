@@ -52,8 +52,23 @@ const bitnode = connector.OpenAPI("bitnodes", {
   url: "https://bitnodes.io/api/v1/",
 });
 
-g.datasource(bitnode);
+g.datasource(bitnode);      
 
+
+const blockstreamLatestBlocks = connector.OpenAPI('blockstreamLatestBlocks', {
+  schema: 'https://raw.githubusercontent.com/kirubagarthiagarajan/blockstreamSchema/main/blockstreamSchema.yaml',
+  url: 'https://blockstream.info/api',
+});
+
+g.datasource(blockstreamLatestBlocks);
+
+
+const blockstreamTip = connector.OpenAPI('blockstreamTip', {
+  schema: 'https://raw.githubusercontent.com/kirubagarthiagarajan/blockstreamSchema/main/blockStreamTip.yaml',
+  url: 'https://blockstream.info/api',
+});
+
+g.datasource(blockstreamTip);
 
 const blockchairapi = connector.OpenAPI('blockchairapi', {
   schema: 'https://raw.githubusercontent.com/neu-info7500-spring-04/Blockchair-API-Schema/main/Blockchair.openapi.yaml',
