@@ -16,7 +16,6 @@ const mempool = connector.OpenAPI("mempool", {
 
 g.datasource(mempool);
 
-
 //Don't chnage this schema. It is specifically for utxo
 const mempoolutxo = connector.OpenAPI("mempoolutxo", {
   schema:
