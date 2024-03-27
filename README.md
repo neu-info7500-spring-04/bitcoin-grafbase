@@ -29,7 +29,4 @@ query {
 The postman view should look like:
 ![postman-example.png](postman-example.png)
 
-updated api-key
-
-
 
