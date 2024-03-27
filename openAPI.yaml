@@ -41,6 +41,29 @@ paths:
               schema:
                 $ref: "#/components/schemas/ispRankingStats"
 
+  /difficulty-adjustment:
+    get:
+      summary: Retrieve Difficulty Adjustment Information
+      description: Returns data related to Bitcoin mining difficulty adjustment.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DifficultyAdjustmentResponse'
+  /fees/recommended:
+    get:
+      summary: Retrieve Transaction Fee Information
+      description: Returns data related to Bitcoin transaction fees.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TransactionFeesResponse'
+
 components:
   schemas:
     miningpool:
@@ -133,3 +156,42 @@ components:
               anyOf:
                 - type: string
                 - type: integer
+
+    DifficultyAdjustmentResponse:
+      type: object
+      properties:
+        remainingTime:
+          type: integer
+          description: Remaining time until the next difficulty adjustment in seconds
+        timeAvg:
+          type: integer
+          description: Average block time in seconds
+        difficultyChange:
+          type: number
+          description: Change in mining difficulty as a percentage
+        previousRetarget:
+          type: number
+          description: Previous difficulty change as a percentage
+        nextRetargetHeight:
+          type: integer
+          description: Height at which the next difficulty retarget will occur
+        estimatedRetargetDate:
+          type: integer
+          format: int64
+          description: Unix timestamp of the estimated retarget date
+
+    TransactionFeesResponse:
+      type: object
+      properties:
+        minimumFee:
+          type: number
+          description: The minimum fee, in satoshis per byte, with no priority
+        economyFee:
+          type: number
+          description: The fee, in satoshis per byte, for low priority transactions
+        hourFee:
+          type: number
+          description: The fee, in satoshis per byte, for medium priority transactions
+        halfHourFee:
+          type: number
+          description: The fee, in satoshis per byte, for high priority transactions
