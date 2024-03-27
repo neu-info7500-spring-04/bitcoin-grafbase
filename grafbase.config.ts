@@ -25,6 +25,14 @@ const mempoolutxo = connector.OpenAPI("mempoolutxo", {
 
 g.datasource(mempoolutxo);
 
+const mempooltop = connector.OpenAPI("mempooltop", {
+  schema:
+    "https://raw.githubusercontent.com/dalavaiyuvaraj/crypto_project/main/test.yaml",
+  url: "https://mempool.space/api/v1",
+});
+
+g.datasource(mempooltop);
+
 const contentful = connector.GraphQL("bitquery", {
   url: "https://graphql.bitquery.io",
   headers: (headers) => {
