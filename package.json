@@ -11,8 +11,15 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/cli": "^7.24.1",
+    "@babel/core": "^7.24.3",
+    "@babel/preset-env": "^7.24.3",
     "@grafbase/sdk": "~0.18.0",
     "@graphql-codegen/cli": "^5.0.2",
     "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "onetime": "^7.0.0",
+    "signal-exit": "^4.1.0"
   }
 }
