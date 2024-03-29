@@ -12,6 +12,7 @@ npx grafbase dev
 ```
 
 The gateway should be at http://127.0.0.1:4000/graphql.
+Gateway is deployed at https://bitcoin-grafbase-mahithchigurupati.grafbase.app/graphql
 
 Use [Postman](https://www.postman.com/) to try the following query on the gateway.
 This query invokes the bitquery subgraph. 
