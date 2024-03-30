@@ -116,6 +116,13 @@ const mempoolConnector = connector.OpenAPI('mempoolBitcoin', {
 g.datasource(mempoolConnector);
 
 
+const nodeip = connector.OpenAPI('bitconNodeip', {
+  schema: 'https://raw.githubusercontent.com/thejelly/Bitcoin-Project---Part-B/main/nodeip.yaml',
+  url: "https://api.bitaps.com/btc/v1",
+});
+
+g.datasource(nodeip);
+
 const ethereum = connector.OpenAPI('ethereum', {
   schema: 'https://raw.githubusercontent.com/RanjithKumar839/demo/main/demo.yaml',
   url: "https://rest.cryptoapis.io/v2/",
