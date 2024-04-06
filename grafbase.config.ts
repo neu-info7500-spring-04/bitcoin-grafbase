@@ -16,6 +16,15 @@ const mempool = connector.OpenAPI("mempool", {
 
 g.datasource(mempool);
 
+
+const top100ConnectivityNodesMempool = connector.OpenAPI("top100ConnectivityNodesMempool", {
+    schema:
+      "https://raw.githubusercontent.com/maddukurimonika/Project_Crypto/main/OpenAPI_Spec.yaml",
+    url: "https://mempool.space/api/v1",
+  });
+  
+  g.datasource(top100ConnectivityNodesMempool);
+  
 //Don't chnage this schema. It is specifically for utxo
 const mempoolutxo = connector.OpenAPI("mempoolutxo", {
   schema:
