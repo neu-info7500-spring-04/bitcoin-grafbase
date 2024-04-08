@@ -34,6 +34,15 @@ const contentful = connector.GraphQL("bitquery", {
 
 g.datasource(contentful);
 
+
+const ISPNodesMempool = connector.OpenAPI("ISPNodesMempool", {
+  schema:
+    "https://raw.githubusercontent.com/Sravani0679/project/main/test.yaml",
+  url: "https://mempool.space/api/v1",
+});
+
+g.datasource(ISPNodesMempool);
+
 const coinapi = connector.OpenAPI("coinapi", {
   schema:
     "https://raw.githubusercontent.com/coinapi/coinapi-sdk/master/data-api/coinapi-marketdata-rest.yaml",
