@@ -61,6 +61,13 @@ const blockstreamLatestBlocks = connector.OpenAPI('blockstreamLatestBlocks', {
 
 g.datasource(blockstreamLatestBlocks);
 
+const GetBlocks = connector.OpenAPI("GetBlocks", {
+  schema:
+  "https://raw.githubusercontent.com/christ-northeastern/bitcoin-blocks/main/text.yaml",
+  url: "https://mempool.space/api",
+});
+
+g.datasource(GetBlocks);
 
 const blockstreamTip = connector.OpenAPI('blockstreamTip', {
   schema: 'https://raw.githubusercontent.com/kirubagarthiagarajan/blockstreamSchema/main/blockStreamTip.yaml',
